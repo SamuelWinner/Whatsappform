@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+  <title>WHATSAPP FORM</title>
+</head>
+
+
+<style>
+*{font-family: Arial, sans-serif;}
+
+form{
+  margin: 15px 5px;
+  width: 500px;
+  font-size: 16px;}
+
+form h1{
+  text-align: center;}
+
+form label{
+  display: block;
+  margin-bottom: 5px;}
+
+form input, form textarea{
+  width:100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  resize: vertical;}
+
+form button{
+  background: green;
+  color: white;
+  padding: 10px 15px;
+  margin-top: 5px;
+  border: none;
+  cursor: pointer;}
+
+form button: hover{
+  background: green;}
+
+</style>
+
+
+<body>
+  
+  <div align="center">
+  
+  <form>
+    <h1>
+    FILL IN THE FORM TO REGISTER
+  </h1>
+    <label for="">Name</label>
+    <input type="text" class="name">
+    <label for="">Email</label>
+    <input type="text" class="email">
+    <label for="">Phone Number</label>
+    <input type="text" class="pnumber">
+    <label for="">University</label>
+    <input type="text" class="university">
+    <label for="">Department</label>
+    <input type="text" class="department">
+    <label for="">Level</label>
+    <input type="text" class="level">
+    <label for="">Which GES are you requesting for</label>
+    <input type="text" class="ges">
+    <label for="">Refferal code(if any)</label>
+    <input type="text" class="refcode">
+    <!--<label for="">Message</label>
+    <textarea class="message"></textarea>-->
+    <button type="button" onclick="sendwhatsapp();">Send Via WhatsApp</button>
+    
+  </form>
+  
+  <script>
+  function sendwhatsapp(){
+    var phonenumber = "+2348074076127"
+    var name= document.querySelector(".name").value;
+    var email= document.querySelector(".email").value;
+    var pnumber= document.querySelector(".pnumber").value;
+    var university= document.querySelector(".university").value;
+    var department= document.querySelector(".department").value;
+    var level= document.querySelector(".level").value;
+    var ges= document.querySelector(".ges").value;
+    var refcode= document.querySelector(".refcode").value;
+    
+    var url= "https://wa.me/"+ phonenumber + "?text="
+    +"*Name :* " + name + "%0a"
+    +"*Email :* " + email + "%0a"
+    +"*Phone Number :* " + pnumber + "%0a"
+    +"*University :* " + university + "%0a"
+    +"*Department :* " + department + "%0a"
+    +"*Level :* " + level + "%0a"
+    +"*Which GES are you requesting for :* " + ges + "%0a"
+    +"*Refferal code(if any) :* " + refcode + "%0a%0a"
+    +"This is an example";
+    
+    window.open(url, "_blank").focus();
+     
+    
+    
+}
+  
+  </script>
+
+
+</body>
+</html>
