@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CodeByWyna SendViaWhatsApp Form</title>
+    <style>
+        body {
+            background-color: #E6E6FA; /* Light Purple background */
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin: 20px 0;
+            font-family: 'Pacifico', cursive;
+            color: #333;
+            font-size: 36px;
+        }
+
+        form {
+            width: 80%;
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+
+        form button {
+            background: green;
+            color: white;
+            padding: 10px 15px;
+            margin-top: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #228B22; /* Forest Green on hover */
+        }
+
+        @media (max-width: 600px) {
+            /* Adjust styles for mobile view */
+            h1 {
+                font-size: 24px;
+            }
+            form {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div align="center">
+        <form>
+            <h1>MyGesHub REGISTERATION FORM</h1>
+            <label for="name">Name</label>
+            <input type="text" class="name" id="name">
+            <label for="email">Email</label>
+            <input type="text" class="email" id="email">
+            <label for="pnumber">Phone Number</label>
+            <input type="text" class="pnumber" id="pnumber">
+            <label for="university">University</label>
+            <input type="text" class="university" id="university">
+            <label for="department">Department</label>
+            <input type="text" class="department" id="department">
+            <label for="level">Level</label>
+            <input type="text" class="level" id="level">
+            <label for="ges">Which GES are you requesting for</label>
+            <input type="text" class="ges" id="ges">
+            <label for="refcode">Referral code (if any)</label>
+            <input type="text" class="refcode" id="refcode">
+            <button type="button" onclick="sendwhatsapp();">Send To Customer Service WhatsApp</button>
+        </form>
+    </div>
+
+    <script>
+        function sendwhatsapp() {
+            var phonenumber = "+2348074076127";
+            var name = document.querySelector(".name").value;
+            var email = document.querySelector(".email").value;
+            var pnumber = document.querySelector(".pnumber").value;
+            var university = document.querySelector(".university").value;
+            var department = document.querySelector(".department").value;
+            var level = document.querySelector(".level").value;
+            var ges = document.querySelector(".ges").value;
+            var refcode = document.querySelector(".refcode").value;
+
+            var url = "https://wa.me/" + phonenumber + "?text="
+                + "*Name:* " + name + "%0a"
+                + "*Email:* " + email + "%0a"
+                + "*Phone Number:* " + pnumber + "%0a"
+                + "*University:* " + university + "%0a"
+                + "*Department:* " + department + "%0a"
+                + "*Level:* " + level + "%0a"
+                + "*Which GES are you requesting for:* " + ges + "%0a"
+                + "*Referral code (if any):* " + refcode + "%0a%0a"
+                + "Good day I need MyGesHub";
+
+            window.open(url, "_blank").focus();
+        }
+    </script>
+</body>
+</html>
